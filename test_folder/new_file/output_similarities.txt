@@ -1,0 +1,4 @@
+thisisa isatest atestfile testfileto filetocheck tochecksimilarities 
+thisanotherfile anotherfileto filetocheck tochecksimilarities checksimilaritiesdon similaritiesdont dontbe tbealarmed bealarmedthis alarmedthisshould thisshouldpass 
+thisissomething issomethingto somethingtosee toseehow seehowmuch howmuchthis muchthistest thistestcan testcanhandle canhandledon handledont dontbe 
+whatifit ifithad ithadsimilarities hadsimilaritieswhat similaritieswhatthen whattheni theniam iamtired 

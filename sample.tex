@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,graphicx,xspace,amsfonts}
+\usepackage{setspace}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-0.5in}
+
+\DeclareMathAlphabet{\mathsl}{OT1}{cmr}{m}{sl}
+\DeclareMathAlphabet{\mathsc}{OT1}{cmr}{m}{sc}
+\DeclareMathAlphabet{\mathslbf}{OT1}{cmr}{bx}{sl}
+% math script font; extra commands to make slightly larger
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}%
+             {<-> s * [1.150] pzcmi7t}{}
+\DeclareMathAlphabet{\mathscript}{OT1}{pzc}{m}{it}
+
+
+
+
+
+
+
+
+\newcommand{\ALGORITHM}{\mbox{\kwfont algorithm}\xspace}
+\newcommand{\ADVERSARY}{\mbox{\kwfont adversary}\xspace}
+\newcommand{\AND}{\mbox{\kwfont and}\xspace}
+\newcommand{\NOT}{\mbox{\kwfont not}\xspace}
+\newcommand{\AS}{\mbox{\kwfont as}\xspace}
+\newcommand{\DO}{\mbox{\kwfont do}\xspace}
+\newcommand{\IF}{\mbox{\kwfont if}\xspace}
+\newcommand{\FI}{\mbox{\kwfont fi}\xspace}
+\newcommand{\ELSE}{\mbox{\kwfont else}\xspace}
+\newcommand{\ELSEIF}{\mbox{\kwfont elsif}\xspace}
+\newcommand{\FOR}{\mbox{\kwfont for}\xspace}
+\newcommand{\OD}{\mbox{\kwfont od}\xspace}
+\newcommand{\OR}{\mbox{\kwfont or}\xspace}
+\newcommand{\PARSE}{\mbox{\kwfont parse}\xspace}
+\newcommand{\PROCEDURE}{\mbox{\kwfont procedure}\xspace}
+\newcommand{\PRIVATE}{\mbox{\kwfont private}\xspace}
+\newcommand{\RETURN}{\mbox{\kwfont return}\xspace}
+\newcommand{\SELECT}{\mbox{\kwfont select}\xspace}
+\newcommand{\THEN}{\mbox{\kwfont then}\xspace}
+\newcommand{\WHILE}{\mbox{\kwfont while}\xspace}
+
+\newcommand{\kwfont}{\bf}
+\newcommand{\bits}{\{0, 1\}}
+\newcommand{\getsr}{{\:{\leftarrow{\hspace*{-3pt}\raisebox{.75pt}{$\scriptscriptstyle\$$}}}\:}}
+\newcommand{\concat}{\|}
+\newcommand{\xor}{\oplus}
+\newcommand{\NULL}{\mathsf{NULL}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+
+
+\newcommand{\twoCols}[4]{
+\begin{center}
+        \framebox{
+        \begin{tabular}{c@{\hspace*{.4em}}|c@{\hspace*{.4em}}c}
+        \begin{minipage}[t]{#1\textwidth}\setstretch{1.2}\gamesfontsize #3 \end{minipage}
+        &
+        \begin{minipage}[t]{#2\textwidth}\setstretch{1.2}\gamesfontsize #4 \end{minipage}
+        \end{tabular}
+        }
+\end{center}
+}
+
+
+\newcommand{\gamesfontsize}{\small}
+
+
+\newcommand{\threeCols}[6]{
+\begin{center}
+        \framebox{
+        \begin{tabular}{@{\hspace{-0.2em}}c@{\hspace{0.2em}}|@{\hspace{0.2em}}c@{\hspace{0.2em}}|@{\hspace{0.2em}}c@{\hspace{0.2em}}}
+        \begin{minipage}[t]{#1\textwidth}\setstretch{1.1}\gamesfontsize #4
+        \end{minipage} &
+        \begin{minipage}[t]{#2\textwidth}\setstretch{1.1}\gamesfontsize #5
+        \end{minipage} &
+        \begin{minipage}[t]{#3\textwidth}\setstretch{1.1}\gamesfontsize #6
+        \end{minipage}
+        \end{tabular}
+        }
+\end{center}
+}
+
+
+\newcommand{\twoColsNoBox}[2]{
+\begin{center}\begin{tabular}{c|c}
+\begin{minipage}[t]{1in}\begin{tabbing}
+12\=12\=12\=\kill
+#1
+\end{tabbing}\end{minipage} &
+\begin{minipage}[t]{1in}\begin{tabbing}
+12\=12\=12\=\kill
+#2
+\end{tabbing}\end{minipage} 
+\end{tabular}\end{center}}
+
+
+\newcommand{\twoColsNoBoxNoDivide}[2]{
+\begin{center}\begin{tabular}{ccc}
+\begin{minipage}[t]{1in}\begin{tabbing}
+12\=12\=12\=\kill
+#1
+\end{tabbing}\end{minipage} & \hspace{10pt} &
+\begin{minipage}[t]{1in}\begin{tabbing}
+12\=12\=12\=\kill
+#2
+\end{tabbing}\end{minipage} 
+\end{tabular}\end{center}}
+
+\newcommand{\twoColsNoDivide}[4]{
+\begin{center}
+        \framebox{
+        \begin{tabular}{c@{\hspace*{.4em}}c@{\hspace*{.4em}}c}
+        \begin{minipage}[t]{#1\textwidth}\setstretch{1.2}\gamesfontsize #3 \end{minipage}
+        &
+        \begin{minipage}[t]{#2\textwidth}\setstretch{1.2}\gamesfontsize #4 \end{minipage}
+        \end{tabular}
+        }
+\end{center}
+}
+
+\newcommand{\Enc}{\mathsc{Enc}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\bf Hw1 Solutions\\[2ex] 
+       \rm\normalsize CNT 4406 --- Viet Tung Hoang --- Spring 2024}
+\date{}
+\author{\bf Your Name Here!}
+
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 1} 
+
+Here I assume that you have installed Latex properly in your machine. 
+You should compile this file under \texttt{pdflatex}. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2} 
+
+One of the most important aspects of Latex is its math mode.
+Mathematical symbols should look like $x$ or $X_5$ or $e^t$. 
+Never write something like x in ordinary text mode---it looks terrible. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3} 
+
+
+
+Occasionally you need to draw pictures. 
+To do that, you first need to produce a picture file in pdf format---here my file is \textbf{ecb.pdf}---and then insert it in the latex file. 
+To draw pictures, I use PowerPoint. You then can print the picture as a pdf file, and use some other tools 
+to crop the~image. 
+The resulting picture is shown in \figref{fig:ecb}. 
+
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.6\textwidth]{ecb.pdf}
+	\caption{The ECB mode of encryption, illustrated for 4 blocks. }
+	\label{fig:ecb}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4} 
+
+In this course we'll routinely use the following notation. 
+For a finite set $S$, we write $x \getsr S$ to denote picking an element of $S$ uniformly at random and assigning it to $x$, 
+and we write $|S|$ to denote the number of elements of $S$. 
+We write $0^n$ to denote the all-zero string of $n$ bits, and $1^n$ the all-one string of $n$ bits. 
+Let $\bits^n$ be the set of all $n$-bit binary strings and $\bits^*$ the set of all binary strings. 
+For binary strings $x$ and~$y$, we write $|x|$ to denote the length of $x$, 
+and $x \concat y$ the concatenation of $x$ and~$y$. 
+If $x$ and $y$ also have the same length, we write $x \xor y$ to denote their xor. 
+We use  $\bot$ to denote a symbol that indicates invalidity; you can think of it as $\NULL$. 
+
+
+\section*{Problem 5}
+
+In homework you'll be asked to give attacks. Below is how you should write an attack to break the left-or-right security notion of the ECB mode of encryption. 
+Don't worry about the technical details; you'll learn them later. The takeaway lesson here is: 
+
+\begin{itemize}
+\item  You should write pseudocode to describe your attack, and accompany it with some English explanation. 
+\item  Always analyze your attack by calculating its \emph{advantage}. This is a number from 0 to $1$ that measures how likely your attack will succeed. 
+\item  In our class you'll learn lots of attack notions, and as a result, you are likely to mistake one for another. Always consult the notes to make sure that
+you are giving the correct form of~attack. 
+\end{itemize}
+
+\noindent
+We now construct an adversary $A$ that breaks the left-or-right security notion of the ECB mode. 
+The code of the adversary is given in \figref{fig:code}. 
+
+
+\begin{figure}[h]
+\twoColsNoDivide{0.7}{0.1}
+{
+\underline{\ADVERSARY $A^{\Enc(\cdot, \cdot)}$} \\[2pt]
+Pick arbitrary distinct messages $M_0, M_1$ of the same length \\
+$C_0 \gets \Enc(M_0, M_0)$; $C_1 \gets \Enc(M_0, M_1)$ \\
+\IF  $C_0 = C_1$ \THEN \RETURN $0$ \ELSE \RETURN $1$
+}
+{
+}
+\vspace{-2ex}
+\caption{The code of an adversary $A$ breaking the left-or-right security of ECB. }
+\label{fig:code}
+\end{figure}
+
+\noindent
+Informally, the adversary $A$ first picks two arbitrary messages $M_0$ and $M_1$ of the same length. 
+It then queries $C_0 \gets \Enc(M_0, M_0)$ to get a ciphertext $C_0$ of $M_0$, and then queries $C_1 \gets \Enc(M_0, M_1)$. 
+The adversary will output $1$ (meaning that it believes that it's in the right world) if and only if $C_0 \ne C_1$. 
+
+\noindent
+If we are in the left world then $C_1$ is a ciphertext of $M_0$. Because ECB is deterministic, we must have $C_0 = C_1$, 
+and in that case the chance that the adversary outputs $1$ is $0$. 
+If we are in the right world, meaning that $C_1$ is a ciphertext of $M_1$, then we must have $C_1 \ne C_0$ due to  the fact that $M_0 \ne M_1$ and the ECB mode is perfectly invertible. 
+ Thus the chance that the adversary outputs~$1$ is $1$. 
+Hence the left-or-right advantage of the adversary is $1 - 0 = 1$. 
+
+
+
+
+\end{document}
